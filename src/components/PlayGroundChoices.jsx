@@ -4,6 +4,19 @@ import { gsap } from "gsap";
 
 function PlayGroundChoices() {
   const { choices, state, setState, reset } = useContext(GameContext);
+  const computerChoiceStyle =
+    state.computerChoice?.name === "rock"
+      ? "border-rockGradient hover:border-hoverrockGradient"
+      : state.computerChoice?.name === "paper"
+        ? "border-paperGradient hover:border-hoverpaperGradient"
+        : "border-scissorsGradient hover:border-hoverscissorsGradient";
+
+  const playerChoiceStyle =
+    state.playerChoice?.name === "rock"
+      ? "border-rockGradient hover:border-hoverrockGradient"
+      : state.playerChoice?.name === "paper"
+        ? "border-paperGradient hover:border-hoverpaperGradient"
+        : "border-scissorsGradient hover:border-hoverscissorsGradient";
 
   const tl = useRef(gsap.timeline());
 
@@ -27,34 +40,19 @@ function PlayGroundChoices() {
       tl.current = gsap.timeline();
       tl.current.fromTo(
         "#playerChoice",
-        { x: -700 },
-        { x: 0, duration: 2, scale: 1.2, ease: "expo.inOut" },
+        { x: -700, scale: 0 },
+        { x: 0, duration: 2, scale: 1.2, ease: "expo.inOut", scale: 1.5 },
         0,
       );
       tl.current.fromTo(
         "#computerChoice",
-        { x: 700 },
-        { x: 0, duration: 2, scale: 1.2, ease: "expo.inOut" },
+        { x: 700, scale: 0 },
+        { x: 0, duration: 2, scale: 1.2, ease: "expo.inOut", scale: 1.5 },
         0,
       );
     }
   }, [state.computerChoice]);
 
-  // ✅ Fixed choice style logic with a direct variable instead of useRef
-
-  const computerChoiceStyle =
-    state.computerChoice?.name === "rock"
-      ? "border-rockGradient hover:border-hoverrockGradient"
-      : state.computerChoice?.name === "paper"
-        ? "border-paperGradient hover:border-hoverpaperGradient"
-        : "border-scissorsGradient hover:border-hoverscissorsGradient";
-
-  const playerChoiceStyle =
-    state.playerChoice?.name === "rock"
-      ? "border-rockGradient hover:border-hoverrockGradient"
-      : state.playerChoice?.name === "paper"
-        ? "border-paperGradient hover:border-hoverpaperGradient"
-        : "border-scissorsGradient hover:border-hoverscissorsGradient";
   return (
     <div className="mx-[135px] flex w-full items-center justify-center gap-20">
       <div
@@ -77,6 +75,7 @@ function PlayGroundChoices() {
           </div>
         )}
       </div>
+
       <div className="flex flex-col gap-5">
         <span className="text-5xl font-bold text-white">YOU LOSE</span>
         <button
@@ -86,6 +85,7 @@ function PlayGroundChoices() {
           PLAY AGAIN
         </button>
       </div>
+
       <div
         className="flex flex-col items-center justify-center gap-10"
         id="computerChoice"
