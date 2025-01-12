@@ -41,13 +41,43 @@ function PlayGroundChoices() {
       tl.current.fromTo(
         "#playerChoice",
         { x: -700, scale: 0 },
-        { x: 0, duration: 2, scale: 1.2, ease: "expo.inOut", scale: 1.5 },
+        {
+          x: 100,
+          duration: 3,
+          scale: 1.2,
+          ease: "bounce.out",
+          scale: 1.5,
+        },
         0,
       );
       tl.current.fromTo(
         "#computerChoice",
         { x: 700, scale: 0 },
-        { x: 0, duration: 2, scale: 1.2, ease: "expo.inOut", scale: 1.5 },
+        {
+          x: -100,
+          duration: 3,
+          scale: 1.2,
+          ease: "bounce.out",
+          scale: 1.5,
+        },
+        0,
+      );
+      tl.current.fromTo(
+        "#playerChoice",
+        { x: 100 },
+        { x: 0, ease: "expo.inOut", delay: 3 },
+        0,
+      );
+      tl.current.fromTo(
+        "#computerChoice",
+        { x: -100 },
+        { x: 0, ease: "expo.inOut", delay: 3 },
+        0,
+      );
+      tl.current.fromTo(
+        "#result",
+        { opacity: 0 },
+        { opacity: 1, ease: "expo.inOut", delay: 3.3 },
         0,
       );
     }
