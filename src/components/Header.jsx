@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../images/logo.svg";
+import { GameContext } from "../contexts/GameContext";
 function Header() {
+  const { state } = useContext(GameContext);
   return (
     <div className="mb-20 flex items-center justify-between gap-80 rounded-md border-[3px] border-HeaderOutline p-3">
       <img src={logo} alt="" />
@@ -8,7 +10,9 @@ function Header() {
         <span className="font-semibold tracking-[0.2em] text-ScoreText">
           SCORE
         </span>
-        <span className="text-5xl font-extrabold text-HeaderOutline">12</span>
+        <span className="text-5xl font-extrabold text-HeaderOutline">
+          {state.score}
+        </span>
       </div>
     </div>
   );

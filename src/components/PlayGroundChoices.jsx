@@ -76,8 +76,8 @@ function PlayGroundChoices() {
         )}
       </div>
 
-      <div className="flex flex-col gap-5">
-        <span className="text-5xl font-bold text-white">YOU LOSE</span>
+      <div id="result" className="flex flex-col items-center gap-5">
+        <span className="text-5xl font-bold text-white">{state.result}</span>
         <button
           className="rounded-md bg-white px-8 py-2 text-lg tracking-wider transition-colors duration-150 hover:text-rockGradient"
           onClick={handlePlayAgain}
