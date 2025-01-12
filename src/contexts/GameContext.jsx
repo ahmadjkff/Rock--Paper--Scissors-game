@@ -32,10 +32,19 @@ const GameProvider = ({ children }) => {
     },
   ];
 
+  const reset = () => {
+    setState({
+      playerChoice: null,
+      computerChoice: null,
+      result: null,
+    });
+  };
+
   const value = {
     state,
     setState,
     choices,
+    reset,
   };
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;

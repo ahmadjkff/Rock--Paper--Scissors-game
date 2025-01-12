@@ -3,9 +3,13 @@ import { GameContext } from "../contexts/GameContext";
 import { gsap } from "gsap";
 
 function PlayGroundChoices() {
-  const { choices, state, setState } = useContext(GameContext);
+  const { choices, state, setState, reset } = useContext(GameContext);
 
   const tl = useRef(gsap.timeline());
+
+  const handlePlayAgain = () => {
+    reset();
+  };
 
   // Generate computer choice once
   useEffect(() => {
@@ -34,10 +38,25 @@ function PlayGroundChoices() {
         0,
       );
     }
-  }, [state.computerChoice]); // Now dependent on computerChoice state
+  }, [state.computerChoice]);
 
+  // ✅ Fixed choice style logic with a direct variable instead of useRef
+
+  const computerChoiceStyle =
+    state.computerChoice?.name === "rock"
+      ? "border-rockGradient hover:border-hoverrockGradient"
+      : state.computerChoice?.name === "paper"
+        ? "border-paperGradient hover:border-hoverpaperGradient"
+        : "border-scissorsGradient hover:border-hoverscissorsGradient";
+
+  const playerChoiceStyle =
+    state.playerChoice?.name === "rock"
+      ? "border-rockGradient hover:border-hoverrockGradient"
+      : state.playerChoice?.name === "paper"
+        ? "border-paperGradient hover:border-hoverpaperGradient"
+        : "border-scissorsGradient hover:border-hoverscissorsGradient";
   return (
-    <div className="flex w-full items-center justify-center space-x-80">
+    <div className="mx-[135px] flex w-full items-center justify-center gap-20">
       <div
         className="flex flex-col items-center justify-center gap-10"
         id="playerChoice"
@@ -48,7 +67,7 @@ function PlayGroundChoices() {
         {state.playerChoice && (
           <div
             key={state.playerChoice.name}
-            className={`z-20 rounded-full border-[20px] bg-white p-10 text-white ${state.playerChoice.styling} translate-y-0`}
+            className={`z-20 translate-y-0 rounded-full border-[20px] bg-white p-10 text-white ${playerChoiceStyle}`}
           >
             <img
               className="size-16"
@@ -57,6 +76,15 @@ function PlayGroundChoices() {
             />
           </div>
         )}
+      </div>
+      <div className="flex flex-col gap-5">
+        <span className="text-5xl font-bold text-white">YOU LOSE</span>
+        <button
+          className="rounded-md bg-white px-8 py-2 text-lg tracking-wider transition-colors duration-150 hover:text-rockGradient"
+          onClick={handlePlayAgain}
+        >
+          PLAY AGAIN
+        </button>
       </div>
       <div
         className="flex flex-col items-center justify-center gap-10"
@@ -68,7 +96,7 @@ function PlayGroundChoices() {
         {state.computerChoice ? (
           <div
             key={state.computerChoice.name}
-            className={`z-20 rounded-full border-[20px] bg-white p-10 text-white transition-all ${state.computerChoice.styling} translate-y-0`}
+            className={`rounded-full border-[20px] bg-white p-10 text-white transition-all ${computerChoiceStyle}`}
           >
             <img
               className="size-16"
