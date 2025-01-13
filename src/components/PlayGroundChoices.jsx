@@ -43,7 +43,7 @@ function PlayGroundChoices() {
         { x: -700, scale: 0 },
         {
           x: 100,
-          duration: 3,
+          duration: 2.5,
           scale: 1.2,
           ease: "bounce.out",
           scale: 1.5,
@@ -55,7 +55,7 @@ function PlayGroundChoices() {
         { x: 700, scale: 0 },
         {
           x: -100,
-          duration: 3,
+          duration: 2.5,
           scale: 1.2,
           ease: "bounce.out",
           scale: 1.5,
@@ -76,8 +76,8 @@ function PlayGroundChoices() {
       );
       tl.current.fromTo(
         "#result",
-        { opacity: 0 },
-        { opacity: 1, ease: "expo.inOut", delay: 3.3 },
+        { opacity: 0, y: 150 },
+        { opacity: 100, y: 0, ease: "power1.in", delay: 3.3 },
         0,
       );
     }
