@@ -23,6 +23,12 @@ export default {
       fontFamily: {
         barlow: ["Barlow", "sans-serif"],
       },
+      boxShadow: {
+        winner:
+          ("0 0 0 20px rgba(74, 144, 226, 0.5)",
+          "0 0 0 40px rgba(74, 144, 226, 0.3)",
+          "0 0 0 60px rgba(74, 144, 226, 0.1)"),
+      },
     },
   },
   plugins: [],

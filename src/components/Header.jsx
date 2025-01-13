@@ -4,7 +4,7 @@ import { GameContext } from "../contexts/GameContext";
 function Header() {
   const { state } = useContext(GameContext);
   return (
-    <div className="mb-20 flex items-center justify-between gap-80 rounded-md border-[3px] border-HeaderOutline p-3">
+    <div className="z-10 mb-20 flex items-center justify-between gap-80 rounded-md border-[3px] border-HeaderOutline p-3">
       <img src={logo} alt="" />
       <div className="flex flex-col items-center rounded-md bg-white px-10 py-4">
         <span className="font-semibold tracking-[0.2em] text-ScoreText">
