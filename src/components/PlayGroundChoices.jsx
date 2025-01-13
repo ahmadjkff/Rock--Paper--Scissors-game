@@ -44,7 +44,6 @@ function PlayGroundChoices() {
         {
           x: 100,
           duration: 2.5,
-          scale: 1.2,
           ease: "bounce.out",
           scale: 1.5,
         },
@@ -56,7 +55,6 @@ function PlayGroundChoices() {
         {
           x: -100,
           duration: 2.5,
-          scale: 1.2,
           ease: "bounce.out",
           scale: 1.5,
         },
