@@ -40,7 +40,7 @@ function PlayGroundChoices() {
       tl.current = gsap.timeline();
       tl.current.fromTo(
         "#playerChoice",
-        { x: -700, scale: 0 },
+        { x: -700, scale: -0.5 },
         {
           x: 100,
           duration: 2.5,
@@ -52,7 +52,7 @@ function PlayGroundChoices() {
       );
       tl.current.fromTo(
         "#computerChoice",
-        { x: 700, scale: 0 },
+        { x: 700, scale: -0.5 },
         {
           x: -100,
           duration: 2.5,
