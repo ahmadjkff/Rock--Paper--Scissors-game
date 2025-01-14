@@ -29,6 +29,9 @@ export default {
           "0 0 0 40px rgba(74, 144, 226, 0.3)",
           "0 0 0 60px rgba(74, 144, 226, 0.1)"),
       },
+      screens: {
+        sm: "375px",
+      },
     },
   },
   plugins: [],
