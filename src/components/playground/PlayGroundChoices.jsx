@@ -93,7 +93,7 @@ function PlayGroundChoices() {
         className="flex items-center gap-10 sm:flex-col-reverse lg:flex-col"
         id="playerChoice"
       >
-        <span className="text-lg font-semibold tracking-wider text-white">
+        <span className="font-semibold tracking-wider text-white sm:text-sm lg:text-lg">
           YOU PICKED
         </span>
         {playerChoice && (
@@ -129,7 +129,7 @@ function PlayGroundChoices() {
         className="flex items-center gap-10 sm:flex-col-reverse lg:flex-col"
         id="computerChoice"
       >
-        <span className="text-lg font-semibold tracking-wider text-white">
+        <span className="font-semibold tracking-wider text-white sm:text-sm lg:text-lg">
           THE HOUSE PICKED
         </span>
         {computerChoice ? (
