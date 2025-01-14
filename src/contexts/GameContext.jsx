@@ -25,7 +25,7 @@ const GameProvider = ({ children }) => {
       name: "rock",
       image: rock,
       styling:
-        "border-rockGradient translate-y-52 hover:border-hoverrockGradient",
+        "border-rockGradient hover:border-hoverrockGradient sm:translate-y-40 lg:translate-y-52",
     },
     {
       name: "scissors",
