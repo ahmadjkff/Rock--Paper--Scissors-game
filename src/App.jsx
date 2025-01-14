@@ -1,7 +1,7 @@
 import "./App.css";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import Modal from "./components/Modal";
-import PlayGroundManager from "./components/PlayGroundManager";
+import PlayGroundManager from "./components/playground/PlayGroundManager";
 import { GameProvider } from "./contexts/GameContext";
 
 function App() {
