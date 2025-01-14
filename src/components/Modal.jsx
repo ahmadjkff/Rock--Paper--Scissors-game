@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import {
   Dialog,
@@ -7,19 +6,18 @@ import {
   DialogPanel,
   DialogTitle,
 } from "@headlessui/react";
-import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import closeIcon from "../../images/icon-close.svg";
 import rules from "../../images/image-rules.svg";
 
 export default function Modal() {
-  const [open, setOpen] = useState(false); // Set to false initially so the modal is closed by default.
+  const [open, setOpen] = useState(false);
 
   return (
     <div>
       {/* Button placed outside the Dialog for visibility */}
       <button
         onClick={() => setOpen(true)}
-        className="absolute bottom-1 right-3 mb-4 rounded-md border-2 border-HeaderOutline px-8 py-1 font-semibold text-white"
+        className="absolute rounded-md border-2 border-HeaderOutline px-8 py-1 font-semibold text-white sm:bottom-8 sm:right-[calc(50%-50px)] lg:bottom-4 lg:right-3"
       >
         RULES
       </button>
@@ -40,7 +38,7 @@ export default function Modal() {
                   RULES
                 </DialogTitle>
                 <button type="button" onClick={() => setOpen(false)}>
-                  <img src={closeIcon} alt="" />
+                  <img src={closeIcon} alt="close icon" />
                 </button>
               </div>
               <img className="mx-auto" src={rules} alt="rules" />
